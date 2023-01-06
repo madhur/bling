@@ -2,10 +2,11 @@ local awful = require("awful")
 local gears = require("gears")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
+local naughty = require("naughty")
 
 local mylayout = {}
 
-mylayout.name = "mstab"
+mylayout.name = "tabs"
 
 local tabbar_disable = beautiful.mstab_bar_disable or false
 local tabbar_ontop = beautiful.mstab_bar_ontop or false
@@ -28,6 +29,7 @@ local tabbar_size = bar.size
     or beautiful.tabbar_size
     or 40
 local dont_resize_slaves = beautiful.mstab_dont_resize_slaves or false
+
 
 -- The top_idx is the idx of the slave clients (excluding all master clients)
 -- that should be on top of all other slave clients ("the focused slave")
