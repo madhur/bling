@@ -3,7 +3,8 @@ local gears = require("gears")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 local naughty = require("naughty")
-
+local helpers = require("madhur.helpers")
+local madhur = require("madhur")
 local mylayout = {}
 
 mylayout.name = "tabs"
@@ -163,7 +164,7 @@ function mylayout.arrange(p)
             s.tabbar.visible = false
         end
         -- otherwise just do tile right
-        awful.layout.suit.tile.right.arrange(p)
+        madhur.layout.tallmagnified.right.arrange(p)
         return
     end
 
@@ -233,6 +234,8 @@ function mylayout.arrange(p)
             slave_area_width
         )
     end
+
+    helpers.magnify(p.clients,  p.geometries, area)
 end
 
 return mylayout
